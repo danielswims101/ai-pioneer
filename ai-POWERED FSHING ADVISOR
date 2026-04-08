@@ -1,0 +1,30 @@
+input anthropic
+
+client = anthropic.anthropic()
+
+location = input("Where are ypu planning to fish? ")
+species = input("What fish are you targeting? ")
+season = ("What time of the year is it? (spring/summer/fall/winter): ")
+
+question = (
+    f"I am going fishing at { } in { }. "
+    f"I want to catch { }. "
+    "What bait should I use, what time of day is best?"
+    "and what depth should I be fishing at?"
+)
+
+response = client.message.creat(
+    model="claude-haiku-4-5-2025001",
+    max_tokens=250,
+    messages[
+        {"role": , "content": }
+    ]
+)
+
+print("")
+print("")
+print("=== FISHING ADVICE FROM AI ===")
+print("Location:", location)
+print("Target:", species)
+print("")
+print(response.content[0].text)
